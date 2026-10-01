@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMax - Đặt vé xem phim online</title>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/style1.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="img/logo.png" alt="CineMax Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span class="logo-text" style="display:none;">🎬 CineMax</span>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="nav-menu" id="navMenu">
+                    <a href="#" class="nav-link active" data-page="home">
+                        <i class="bi bi-house-door"></i> Trang chủ
+                    </a>
+                    <a href="#" class="nav-link" data-page="now-showing">
+                        <i class="bi bi-film"></i> Phim đang chiếu
+                    </a>
+                    <a href="#" class="nav-link" data-page="coming-soon">
+                        <i class="bi bi-calendar-event"></i> Phim sắp chiếu
+                    </a>
+                    <a href="#" class="nav-link" data-page="history">
+                        <i class="bi bi-clock-history"></i> Lịch sử vé
+                    </a>
+                </nav>
+
+                <!-- User Actions -->
+                <div class="user-actions">
+                    <button class="btn-icon" id="searchBtn" title="Tìm kiếm">
+                        <i class="bi bi-search"></i>
+                    </button>
+                    <button class="btn-icon" id="userBtn" title="Tài khoản">
+                        <i class="bi bi-person-circle"></i>
+                    </button>
+                    <button class="btn-icon mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="bi bi-list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-bar" id="searchBar">
+                <div class="search-input-wrapper">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="searchInput" placeholder="Tìm kiếm phim...">
+                    <button class="btn-close-search" id="closeSearchBtn">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Page -->
+        <section id="homePage" class="page active">
+            <div class="hero-section">
+                <div class="container">
+                    <h1 class="hero-title">Khám phá thế giới điện ảnh</h1>
+                    <p class="hero-subtitle">Đặt vé nhanh chóng, trải nghiệm tuyệt vời</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="bi bi-fire"></i> Phim HOT
+                </h2>
+                <div class="movies-grid" id="homeMoviesGrid"></div>
+            </div>
+        </section>
+
+        <!-- Now Showing Page -->
+        <section id="nowShowingPage" class="page">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="bi bi-film"></i> Phim đang chiếu
+                </h2>
+                <div class="movies-grid" id="nowShowingGrid"></div>
+            </div>
+        </section>
+
+        <!-- Coming Soon Page -->
+        <section id="comingSoonPage" class="page">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="bi bi-calendar-event"></i> Phim sắp chiếu
+                </h2>
+                <div class="movies-grid" id="comingSoonGrid"></div>
+            </div>
+        </section>
+
+        <!-- History Page -->
+        <section id="historyPage" class="page">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="bi bi-clock-history"></i> Lịch sử đặt vé
+                </h2>
+                <div id="historyContent" class="history-content"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Về CineMax</h3>
+                    <p>Hệ thống rạp chiếu phim hiện đại, mang đến trải nghiệm điện ảnh tuyệt vời nhất.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên hệ</h3>
+                    <p><i class="bi bi-telephone"></i> 1900 6767</p>
+                    <p><i class="bi bi-envelope"></i> support@cinemax.vn</p>
+                    <p><i class="bi bi-geo-alt"></i> TP. Hồ Chí Minh</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Kết nối với chúng tôi</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/cgvcinemavietnam/?locale=vi_VN" class="social-link"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/cgvcinemasvietnam/" class="social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCu9QjEfQFbO4-x5toCFACrA" class="social-link"><i class="bi bi-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@cgv_vn" class="social-link"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CineMax. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal: Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('loginModal')">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <div class="modal-header">
+                <i class="bi bi-person-circle"></i>
+                <h2>Đăng nhập</h2>
+            </div>
+            <form id="loginForm" class="form">
+                <div class="form-group">
+                    <label><i class="bi bi-telephone"></i> Số điện thoại</label>
+                    <input type="tel" id="loginPhone" required placeholder="Nhập số điện thoại">
+                </div>
+                <div class="form-group">
+                    <label><i class="bi bi-lock"></i> Mật khẩu</label>
+                    <input type="password" id="loginPassword" required placeholder="Nhập mật khẩu">
+                </div>
+                <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                <p class="form-link">
+                    Chưa có tài khoản? <a href="#" onclick="switchToRegister(event)">Đăng ký ngay</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Register -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('registerModal')">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <div class="modal-header">
+                <i class="bi bi-person-plus"></i>
+                <h2>Đăng ký tài khoản</h2>
+            </div>
+            <form id="registerForm" class="form">
+                <div class="form-group">
+                    <label><i class="bi bi-person"></i> Họ tên</label>
+                    <input type="text" id="registerName" required placeholder="Nhập họ tên">
+                </div>
+                <div class="form-group">
+                    <label><i class="bi bi-telephone"></i> Số điện thoại</label>
+                    <input type="tel" id="registerPhone" required placeholder="Nhập số điện thoại">
+                </div>
+                <div class="form-group">
+                    <label><i class="bi bi-lock"></i> Mật khẩu</label>
+                    <input type="password" id="registerPassword" required placeholder="Nhập mật khẩu">
+                </div>
+                <div class="form-group">
+                    <label><i class="bi bi-calendar"></i> Ngày sinh</label>
+                    <input type="date" id="registerBirthday" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Đăng ký</button>
+                <p class="form-link">
+                    Đã có tài khoản? <a href="#" onclick="switchToLogin(event)">Đăng nhập</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Movie Details -->
+    <div id="movieModal" class="modal">
+        <div class="modal-content modal-large">
+            <button class="modal-close" onclick="closeModal('movieModal')">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <div id="movieDetails"></div>
+        </div>
+    </div>
+
+    <!-- Modal: Booking -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content modal-large">
+            <button class="modal-close" onclick="closeModal('bookingModal')">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <div class="modal-header">
+                <i class="bi bi-ticket-perforated"></i>
+                <h2>Đặt vé xem phim</h2>
+            </div>
+            <div id="bookingContent"></div>
+        </div>
+    </div>
+
+    <!-- Modal: Payment -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('paymentModal')">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <div class="modal-header">
+                <i class="bi bi-credit-card"></i>
+                <h2>Thanh toán</h2>
+            </div>
+            <div id="paymentContent"></div>
+        </div>
+    </div>
+
+    <!-- Modal: Ticket -->
+    <div id="ticketModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('ticketModal')">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <div id="ticketContent"></div>
+        </div>
+    </div>
+
+    <!-- Modal: Review -->
+    <div id="reviewModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('reviewModal')">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <div id="reviewModalContent"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/main1.js"></script>
+</body>
+</html>
