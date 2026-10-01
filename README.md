@@ -9,19 +9,19 @@ An end-to-end academic project focusing on **System Analysis & Design (SAD)** an
 
 ### 1. System Class Diagram
 *Data entities, methods, and relational mapping for booking and user management.*
-![Class Diagram](./diagrams/classdiagram.png)
+![Class Diagram](./diagram/classdiagram.png)
 
 ### 2. Use Case Architecture
 *Overview of system actors (Customer, Staff) and core functional modules.*
-![Use Case Diagram](./diagrams/usecasediagram.jpg)
+![Use Case Diagram](./diagram/usecasediagram.jpg)
 
 ### 3. Core Activity Flow (Book Ticket Module)
 *Business logic and state transitions across seat reservation and payment.*
-![Activity Diagram](./diagrams/activitydiagram_bookticket.jpg)
+![Activity Diagram](./diagram/activitydiagram_bookticket.jpg)
 
 ### 4. Sequence Diagram (Book Ticket Flow)
 *Sequential execution logic and parallel queries across controllers, cinema, showtime, and payment components.*
-![Sequence Diagram](./diagrams/sequencediagram_bookticket.jpg)
+![Sequence Diagram](./diagram/sequencediagram_bookticket.jpg)
 
 ---
 
